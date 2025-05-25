@@ -1,68 +1,88 @@
-Abstraction
-AIM
-To demonstrate the use of the ABC module in Python by creating an abstract base class Animal with a concrete method sleep() common to all child classes, and an abstract method sound() which is implemented differently in each subclass.
+# Exp.No:6.a
+## Abstraction
 
-ALGORITHM
-Import Required Module:
+### AIM  
+To write an abstract class Animal with an abstract mathod move which can be implemented by the subclasses of the animal class.
+### ALGORITHM
 
-Import ABC and abstractmethod from the abc module.
+Define an Abstract Base Class (ani):
 
-Define Abstract Base Class:
+The class ani inherits from ABC, making it an abstract class.
 
-Create a class Animal which inherits from ABC.
+An abstract method do() is defined using @abstractmethod. This means any subclass must implement the do() method.
 
-Define an abstract method sound() using the @abstractmethod decorator.
+Create Subclasses of ani:
 
-Define a concrete method sleep() that prints a generic message, which will be inherited by all child classes.
+hum, mon, dog, and lion are subclasses that inherit from ani.
 
-Create Child Classes:
+Each subclass provides its own implementation of the do() method, as required by the abstract base class:
 
-Define multiple child classes such as Cat, Snake, Dog, and Lion which inherit from Animal.
+hum class: Defines do() to print "I can walk and run".
 
-In each subclass, implement the sound() method with a message specific to that animal.
+mon class: Defines do() to print "I can crawl".
 
-Demonstrate Functionality:
+dog class: Defines do() to print "I can bark".
 
-Call the sleep() method.
+lion class: Defines do() to print "I can roar".
 
-Create instances of the child classes.
+Instantiate Objects and Call do():
 
-Call the sound() method on each instance to display the unique behavior of each animal.
+Objects h, m, d, and l are created from the respective classes (hum, mon, dog, lion).
 
-PROGRAM
+### PROGRAM
 from abc import ABC,abstractmethod
- 
-class Animal(ABC):
+
+class ani(ABC):
+
     @abstractmethod
-    def sound(self):
-        pass
     
- 
-class Snake(Animal):
-    def sound(self):
-        print("I can hiss")
- 
-class Dog(Animal):
-    def sound(self):
+    def do(self):
+    
+        pass
+        
+class hum(ani):
+
+    def do(self):
+    
+        print("I can walk and run")
+        
+class mon(ani):
+
+    def do(self):
+    
+        print("I can crawl")
+        
+class dog(ani):
+
+    def do(self):
+    
         print("I can bark")
- 
-class Lion(Animal):
-    def sound(self):
+        
+class lion(ani):
+
+    def do(self):
+    
         print("I can roar")
-       
-class Cat(Animal):
-    def sound(self):
-        print("I can meow")
-        
-print("I am going to sleep in a while")
-        
-c = Cat()
-c.sound()
-s = Snake()
-s.sound()
+h=hum()
 
-OUTPUT
-Screenshot (248)
+h.do()
 
-RESULT
-Thus the python program was initiated and executed successfully.
+m=mon()
+
+m.do()
+
+d=dog()
+
+d.do()
+
+l=lion()
+
+l.do()
+
+### OUTPUT
+![image](https://github.com/user-attachments/assets/ebec2401-f85a-4913-ae7b-775d689b3a5e)
+
+
+
+### RESULT
+Thus, an abstract class Animal with an abstract method move can be implemented by the subclasses of the animal class was implemented successfully.
